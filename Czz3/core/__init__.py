@@ -1,1 +1,0 @@
-# Core functionality package for Video Upload Automation 
