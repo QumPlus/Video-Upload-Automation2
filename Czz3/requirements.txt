@@ -1,0 +1,50 @@
+# Video Upload Automation - Python Dependencies
+
+# HTTP Requests and API Integration
+requests>=2.31.0
+requests-oauthlib>=1.3.1
+
+# GUI Framework (Tkinter is built-in, but include pillow for image support)
+Pillow>=10.0.0
+
+# Scheduling
+schedule>=1.2.0
+
+# Folder Monitoring
+watchdog>=2.1.0
+
+# Data handling
+pathlib>=1.0.1
+
+# Type hints support for older Python versions
+typing-extensions>=4.7.1
+
+# Optional: Video processing (if needed for metadata extraction)
+# python-ffmpeg>=1.0.16
+
+# Development and Testing (optional)
+# pytest>=7.4.0
+# black>=23.7.0
+# flake8>=6.0.0
+
+# macOS specific (optional, for native integration)
+# pyobjc>=9.2.0
+
+# Note: The following packages are built into Python:
+# - tkinter (GUI framework)
+# - threading (concurrent operations)
+# - queue (thread-safe queues)
+# - json (JSON handling)
+# - os, pathlib (file operations)
+# - datetime (date/time handling)
+# - urllib (URL parsing)
+# - http.server (OAuth callback server)
+# - socketserver (network server)
+# - webbrowser (opening browser for OAuth)
+# - dataclasses (data structures)
+# - typing (type hints)
+# - configparser (configuration files)
+# - shutil (file operations)
+# - subprocess (system commands)
+# - time (time operations)
+# - re (regular expressions) 
