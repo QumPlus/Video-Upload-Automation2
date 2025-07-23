@@ -50,7 +50,7 @@ class MainTab:
         button_frame.pack()
         
         self.run_button = ttk.Button(button_frame, text="RUN", command=self.run_uploads, 
-                                   style='Accent.TButton', width=15)
+                                   width=15)
         self.run_button.pack(side='left', padx=5)
         
         self.abort_button = ttk.Button(button_frame, text="ABORT", command=self.abort_uploads, 

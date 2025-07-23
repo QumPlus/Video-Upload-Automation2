@@ -25,13 +25,14 @@
   "general": {
     "max_concurrent": 3,
     "retry_attempts": 3,
-    "upload_timeout": 300,
-    "base_folder": ""
+    "upload_timeout": 300
   },
   "scheduling": {
     "enabled": false,
     "schedule_type": "manual",
     "schedule_time": "14:00",
-    "facebook_delay_days": 30
+    "schedule_day": "Monday",
+    "facebook_delay_days": 30,
+    "auto_retry": true
   }
-} 
+}

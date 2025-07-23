@@ -40,25 +40,46 @@ class VideoUploadApp:
         self.load_settings()
         
     def setup_theme(self):
-        """Configure theme for macOS appearance"""
+        """Configure theme for cross-platform appearance"""
         try:
             # Try to detect dark mode on macOS
             import subprocess
-            result = subprocess.run(['defaults', 'read', '-g', 'AppleInterfaceStyle'], 
-                                  capture_output=True, text=True)
-            if result.returncode == 0 and 'Dark' in result.stdout:
-                # Dark mode detected
-                self.root.configure(bg='#2b2b2b')
+            import platform
+            
+            if platform.system() == 'Darwin':  # macOS
+                result = subprocess.run(['defaults', 'read', '-g', 'AppleInterfaceStyle'], 
+                                      capture_output=True, text=True)
+                if result.returncode == 0 and 'Dark' in result.stdout:
+                    # Dark mode detected
+                    self.root.configure(bg='#2b2b2b')
+                else:
+                    # Light mode
+                    self.root.configure(bg='#f0f0f0')
             else:
-                # Light mode
+                # Windows/Linux - use default
                 self.root.configure(bg='#f0f0f0')
         except:
             # Default to light theme
             self.root.configure(bg='#f0f0f0')
             
-        # Configure ttk styles
+        # Configure ttk styles with cross-platform theme selection
         style = ttk.Style()
-        style.theme_use('aqua')  # macOS native theme
+        
+        # Try platform-specific themes, fall back to default
+        try:
+            import platform
+            if platform.system() == 'Darwin':  # macOS
+                style.theme_use('aqua')
+            elif platform.system() == 'Windows':  # Windows
+                style.theme_use('vista')
+            else:  # Linux
+                style.theme_use('clam')
+        except:
+            # Fallback to default theme
+            try:
+                style.theme_use('default')
+            except:
+                pass  # Use whatever theme is available
         
     def create_notebook(self):
         """Create the tabbed interface"""
