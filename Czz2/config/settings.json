@@ -1,0 +1,37 @@
+{
+  "platforms": {
+    "cloudflare": {
+      "enabled": true,
+      "api_token": "",
+      "account_id": ""
+    },
+    "youtube": {
+      "enabled": true,
+      "client_id": "",
+      "client_secret": "",
+      "refresh_token": ""
+    },
+    "pinterest": {
+      "enabled": false,
+      "access_token": "",
+      "board_id": ""
+    },
+    "facebook": {
+      "enabled": true,
+      "page_token": "",
+      "group_id": ""
+    }
+  },
+  "general": {
+    "max_concurrent": 3,
+    "retry_attempts": 3,
+    "upload_timeout": 300,
+    "base_folder": ""
+  },
+  "scheduling": {
+    "enabled": false,
+    "schedule_type": "manual",
+    "schedule_time": "14:00",
+    "facebook_delay_days": 30
+  }
+} 
